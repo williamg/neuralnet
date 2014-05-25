@@ -2,9 +2,11 @@ neuralnet
 ===
 A Python utility for using feed-forward artificial neural networks
 
----
+ - [Command Line Usage][1]
+ - [NeuralNet Class Reference][2]
 
-Command Line Usage
+---
+Command Line Usage {#cl}
 ---
 
 The utility can be run from the command line as follows:
@@ -30,6 +32,7 @@ An optional parameter can be specified with `-e MAXERROR` where `MAXERROR` is th
 The trained network will be saved to the path from which the network was originally loaded.
 
 **Evaluating data on the network:**
+
 Data can be evaluated on the network in two ways:
 
     python neuralnet.py eval -i 1 0 /path/to/network.txt
@@ -40,11 +43,12 @@ Will evaluate the dataset `1 0` on the neural net and report the output.
     
 Will evaluate all datasets contained in the input file and report the output.
 
-NeuralNet Class Reference
+NeuralNet Class Reference {#cr}
 ---
 A fully-functional NeuralNet class is also included that can be imported into Python projects.
 
 **Initializing the class:**
+
 The neural network can be initialized with random weights and biases as follows:
 
     neurons = [2, 3, 1]
@@ -59,6 +63,7 @@ The `weights` array is a two-dimensional list. `weights[i][j]` corresponds to th
 The `biases` array is simply a list of biases for each neuron.
 
 **Saving a network:**
+
 A neural network can be saved using the `save` function:
 
     nn.save('/path/to/save.txt')
@@ -66,11 +71,13 @@ A neural network can be saved using the `save` function:
 Will save the neural network to the provided path.
 
 **Loading a network:**
+
 A neural network can be loaded using the `load` function:
 
     nn = NeuralNetwork.load('/path/to/load.txt')
 
 **Training the network:**
+
 The network can be trained on a set of data as follows:
 
     input = [[0, 0],[0,1],[1,0],[1,1]]
@@ -79,6 +86,7 @@ The network can be trained on a set of data as follows:
     nn.simulate(input, output, maxError)
 
 **Evaluating data on a network:**
+
 To evaluate a set of data on the network, use the `eval` function:
 
     input = [1,0]
@@ -88,3 +96,7 @@ To evaluate a set of data on the network, use the `eval` function:
 
 ---
 Developed by William Ganucheau. Released under the MIT License.
+
+
+  [1]: #cl
+  [2]: #cr
