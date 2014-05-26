@@ -112,6 +112,7 @@ class NeuralNetwork:
             sys.exit ('Error: Invalid input size.')
 
         output = []
+        neuronIndex = 0;
 
         for layer in range(1, self.numLayers):
             output = zeroArray(self.neurons[layer])
@@ -125,8 +126,11 @@ class NeuralNetwork:
                     output[neuron] += val
                     self.inputs[neuronIndex][weight] = input[weight]
                 
+                output[neuron] += self.biases[neuronIndex]
                 output[neuron] = self.__sigmoid(output[neuron])
                 self.outputs[neuronIndex] = output[neuron]
+                
+                neuronIndex += 1
 
             input = output
         
