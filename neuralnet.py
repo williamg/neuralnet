@@ -33,6 +33,8 @@ class NeuralNetwork:
 		if weights == None:
 			self.__initWeights()
 
+		self.tempWeights = weights;
+
 		if biases == None:
 			self.__initBiases()
 
@@ -167,6 +169,8 @@ class NeuralNetwork:
 							)
 				self.__trainNeuron(neuronIndex, error)
 
+		self.weights = self.tempWeights;
+
 	# Train a neuron
 	def __trainNeuron(self, index, error):
 		self.errorGradients[index] = self.outputs[index]
@@ -174,7 +178,7 @@ class NeuralNetwork:
 
 		numWeights = len(self.weights[index])
 		for weight in range(0, numWeights):
-			self.weights[index][weight] += (
+			self.tempWeights[index][weight] += (
 					self.inputs[index][weight] * self.errorGradients[index]
 			)
 
