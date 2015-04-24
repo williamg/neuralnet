@@ -17,7 +17,7 @@ There are three different commands that can be used to create new networks, trai
 
 **Creating a new network:**
 
-    python neuralnet.py new /path/to/save/network.txt 2 3 1
+    python neuralnet.py new /path/to/save/network.tnxt 2 3 1
     
 The above command will create a new network with 3 layers consisting of 2 neurons, 3 neurons, and 1 neuron, respectively, and save it to the designated path.
 
@@ -38,7 +38,7 @@ Data can be evaluated on the network in two ways:
     
 Will evaluate the dataset `1 0` on the neural net and report the output.
 
-    python neyralnet.py eval -l input.txt /path/to/network.txt
+    python neuralnet.py eval -l input.txt /path/to/network.txt
     
 Will evaluate all datasets contained in the input file and report the output.
 
@@ -86,7 +86,7 @@ To evaluate a set of data on the network, use the `eval` function:
     input = [1,0]
     output = nn.eval(input)
     
-*Note that when training the network, a list of data sets is expected while one one data set is expected when evaluating data*
+*Note that when training the network, a list of data sets is expected while one data set is expected when evaluating data*
 
 ---
 Developed by William Ganucheau. Released under the MIT License.
